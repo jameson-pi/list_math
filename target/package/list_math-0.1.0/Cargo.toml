@@ -14,7 +14,7 @@
 edition = "2018"
 name = "list_math"
 version = "0.1.0"
-authors = ["_jameson_"]
+authors = ["_jameson_ <piscitello284@gmail.com>"]
 description = "a crate for doing math on a list"
 license = "MIT"
 

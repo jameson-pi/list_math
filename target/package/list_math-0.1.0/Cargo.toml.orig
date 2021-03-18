@@ -3,8 +3,8 @@ name = "list_math"
 version = "0.1.0"
 authors = ["_jameson_"]
 edition = "2018"
-decsription = "a crate for doing math on a list"
-licence = "MIT"
+description = "a crate for doing math on a list"
+license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]

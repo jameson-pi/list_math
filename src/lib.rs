@@ -45,3 +45,15 @@ fn largest_isize_test(){
     assert_eq!(largest, 6);
     println!("{}",largest);
 }
+#[test]
+fn average_list_test(){
+  let mut list = AverageList{
+    list: vec!(3),
+    average: 3 as f64
+  };
+  for x in 1..6 {
+    list.add(x);
+  }
+  let num = 3;
+  assert_eq!(num as f64,list.average);
+}

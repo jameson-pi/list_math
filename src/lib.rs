@@ -1,6 +1,7 @@
 //! a crate for doing math on a list.
 /// a thing for finding largest isize
-pub fn largest_isize(list: &[isize]) -> isize {
+#[PartialOrd]
+pub fn largest<x>(list: &[x]) -> x {
     let mut largest = list[0];
     for &item in list.iter() {
         if item > largest{
@@ -41,7 +42,7 @@ impl AverageList {
 #[test]
 fn largest_isize_test(){
     let list = vec!(1,6,2);
-    let largest = largest_isize(&list);
+    let largest = largest(&list);
     assert_eq!(largest, 6);
     println!("{}",largest);
 }
@@ -51,9 +52,10 @@ fn average_list_test(){
     list: vec!(3),
     average: 3 as f64
   };
-  for x in 1..6 {
+  for x in 1..7 {
     list.add(x);
   }
+  list.remove();
   let num = 3;
   assert_eq!(num as f64,list.average);
 }

@@ -1,14 +1,15 @@
 //! a crate for doing math on a list.
 /// a thing for finding largest isize
 pub fn largest<X: PartialOrd>(list: &[X]) -> X {
-    let mut largest = list[0];
-    for &item in list.iter() {
-        if item > largest{
-            largest = item;
+    let mut largest = &list[0];  // Borrow the first element
+    for &item in list.iter() {  // Iterate over references (no move)
+        if item > *largest {     // Dereference to compare values
+            largest = &item;      // Borrow the larger element
         }
     }
-    largest
+    *largest  // Dereference to return the actual value
 }
+
 /// find average on list
 pub struct AverageList {
     list: Vec<i32>,

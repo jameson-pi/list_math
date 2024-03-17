@@ -32,6 +32,23 @@ This code will print:
 ```
 The largest number is: 10
 ```
+### smallest function
+
+The smallest function finds the smallest element in a list of `isize` values.
+```
+use list_math::smallest;
+
+fn main() {
+let numbers = vec![ 3 , 10 , - 1 , 5 ];
+let biggest = smallest(&numbers);
+println!("The smallest number is: {}", biggest);
+}
+```
+
+This code will print:
+```
+The smallest number is: -1
+```
 ### AverageList struct
 
 The AverageList struct helps you keep track of a running average of `i32` values.

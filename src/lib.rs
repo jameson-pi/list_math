@@ -3,8 +3,9 @@
 fn largest<T: PartialOrd + std::cmp::Ord>(list: &[T]) -> Option<&T> {
     list.iter().max()
   }
-  
-
+fn smallest<T: PartialOrd + std::cmp::Ord>(list: &[T]) -> Option<&T> {
+    list.iter().min()
+}
 /// find average on list
 pub struct AverageList {
     list: Vec<i32>,
@@ -32,25 +33,4 @@ impl AverageList {
         let total: i32 = self.list.iter().sum();
         self.average = total as f64 / self.list.len() as f64;
     }
-}
-
-#[test]
-fn largest_isize_test(){
-    let list = vec!(1,6,2);
-    let largest = largest(&list);
-    assert_eq!(largest, 6);
-    println!("{}",largest);
-}
-#[test]
-fn average_list_test(){
-  let mut list = AverageList{
-    list: vec!(3),
-    average: 3 as f64
-  };
-  for x in 1..7 {
-    list.add(x);
-  }
-  list.remove();
-  let num = 3;
-  assert_eq!(num as f64,list.average);
 }

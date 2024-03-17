@@ -1,8 +1,8 @@
 //! a crate for doing math on a list.
 /// a thing for finding largest isize
 pub fn largest<X: PartialOrd>(list: &[X]) -> X {
-    let mut largest = list[0];
-    for &item in list.iter() {
+    let mut largest = &list[0];
+    for item in list.iter() {
         if item > largest{
             largest = item;
         }

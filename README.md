@@ -32,8 +32,6 @@ This code will print:
 ```
 The largest number is: 10
 ```
-Note: The largest function works with any type that implements the `PartialOrd` trait,
-which allows for ordering elements.
 ### AverageList struct
 
 The AverageList struct helps you keep track of a running average of `i32` values.

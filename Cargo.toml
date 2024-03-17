@@ -1,9 +1,9 @@
 [package]
 name = "list_math"
-version = "0.3.0"
+version = "0.3.1"
 authors = ["jameson-pi <piscitello284@gmail.com>"]
 edition = "2018"
-description = "a crate for doing math on a list"
+description = "a crate for doing math on a list including average, smallest, largest, and standard deviation"
 license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

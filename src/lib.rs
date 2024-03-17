@@ -1,6 +1,6 @@
 //! a crate for doing math on a list.
 /// a thing for finding largest isize
-fn largest<T: PartialOrd>(list: &[T]) -> Option<&T> {
+fn largest<T: PartialOrd + std::cmp::Ord>(list: &[T]) -> Option<&T> {
     list.iter().max()
   }
   
@@ -38,7 +38,7 @@ impl AverageList {
 fn largest_isize_test(){
     let list = vec!(1,6,2);
     let largest = largest(&list);
-    assert_eq!(*largest, 6);
+    assert_eq!(largest, 6);
     println!("{}",largest);
 }
 #[test]

@@ -34,3 +34,16 @@ impl AverageList {
         self.average = total as f64 / self.list.len() as f64;
     }
 }
+fn standard_deviation(data: &[f64]) -> Option<f64> {
+    if data.is_empty() {
+      return None;
+    }
+  
+    let mean = data.iter().sum::<f64>() / data.len() as f64;
+  
+    let variances = data.iter()
+      .map(|x| (x - mean).powi(2)) // Square the difference from the mean
+      .sum::<f64>() / (data.len() as f64 - 1.0); // Bessel's correction
+  
+    Some(variances.sqrt()) // Return the square root of the variance
+  }

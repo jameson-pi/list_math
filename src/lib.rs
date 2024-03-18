@@ -1,11 +1,12 @@
 //! a crate for doing math on a list.
-/// a thing for finding largest isize
+/// a function for finding largest isize
 fn largest<T: PartialOrd + std::cmp::Ord>(list: &[T]) -> Option<&T> {
     list.iter().max()
   }
 fn smallest<T: PartialOrd + std::cmp::Ord>(list: &[T]) -> Option<&T> {
     list.iter().min()
 }
+
 /// find average on list
 pub struct AverageList {
     list: Vec<i32>,

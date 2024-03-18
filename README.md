@@ -9,7 +9,7 @@ Add the following line to your `Cargo.toml` file:
 
 ```
 [dependencies]
-list_math = "0.1.0"
+list_math = "0.3.2"
 ```
 Then run `cargo build` to install the crate.
 
@@ -119,6 +119,8 @@ Note: This function assumes the data type is f64 for floating-point numbers.
 
 We welcome contributions to this crate! Please measage me at piscitello284@gmail.com for
 details on how to get involved.
+## Issues
+Submit an issue at https://github.com/jameson-pi/list_math if you encounter anything weird.
 ## License
 This crate is licensed under the MIT License.
 

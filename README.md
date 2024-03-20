@@ -1,3 +1,9 @@
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Jameson-pi/list_math/rust.yml)
+![Crates.io Downloads (version)](https://img.shields.io/crates/dv/list_math)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/jameson-pi/list_math)
+![Crates.io Version](https://img.shields.io/crates/v/list_math)
+
+
 # list_math
 
 This crate provides functions for performing basic mathematical operations on lists in
@@ -9,7 +15,7 @@ Add the following line to your `Cargo.toml` file:
 
 ```
 [dependencies]
-list_math = "0.3.2"
+list_math = "0.3.3"
 ```
 Then run `cargo build` to install the crate.
 

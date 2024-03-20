@@ -1,6 +1,6 @@
 [package]
 name = "list_math"
-version = "0.3.2"
+version = "0.3.3"
 authors = ["jameson-pi <piscitello284@gmail.com>"]
 edition = "2018"
 description = "a crate for doing math on a list including average, smallest, largest, and standard deviation"

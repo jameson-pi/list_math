@@ -5,13 +5,13 @@ use std::convert::TryInto;
 
 /// a function for finding largest isize
 #[inline]
-pub fn largest<T: PartialOrd + Ord>(list: &[T]) -> Option<&T> {
-    list.iter().max()
+pub fn largest<T: Clone + PartialOrd + Ord>(list: &[T]) -> Option<T> {
+    list.iter().max().cloned()
 }
 
 #[inline]
-pub fn smallest<T: PartialOrd + Ord>(list: &[T]) -> Option<&T> {
-    list.iter().min()
+pub fn smallest<T: Clone + PartialOrd + Ord>(list: &[T]) -> Option<T> {
+    list.iter().min().cloned()
 }
 
 /// find average on list
@@ -85,5 +85,19 @@ mod test {
         avg_list.add(8);
         avg_list.add(4);
         assert_eq!(Some(4), avg_list.remove());
+    }
+
+    #[test]
+    fn smallest_test() {
+        let numbers = vec![1, 3, 5, 7, 9];
+        let smallest = smallest(&numbers);
+        assert_eq!(smallest, Some(1));
+    }
+
+    #[test]
+    fn largest_test() {
+        let numbers = vec![1, 3, 5, 7, 9];
+        let largest = largest(&numbers);
+        assert_eq!(largest, Some(9));
     }
 }

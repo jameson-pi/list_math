@@ -16,19 +16,19 @@ pub fn smallest<T: PartialOrd + Ord>(list: &[T]) -> Option<&T> {
 
 /// find average on list
 #[derive(Debug, Clone, Default)]
-pub struct AverageList {
-    list: Vec<i32>,
+pub struct AverageList<T: Into<i128> + Clone> {
+    list: Vec<T>,
     average: f64,
 }
 
-impl AverageList {
-    pub fn add(&mut self, value: i32) {
+impl<T: Into<i128> + Clone> AverageList<T> {
+    pub fn add(&mut self, value: T) {
         self.list.push(value);
         self.update_average();
     }
 
     /// Remove the last element from the list and update the average.
-    pub fn remove(&mut self) -> Option<i32> {
+    pub fn remove(&mut self) -> Option<T> {
         let value = self.list.pop()?;
         self.update_average();
         Some(value)
@@ -39,7 +39,7 @@ impl AverageList {
     }
 
     fn update_average(&mut self) {
-        let total: i32 = self.list.iter().sum();
+        let total: i128 = self.list.iter().map(|x| x.clone().into()).sum();
         self.average = total as f64 / self.list.len() as f64;
     }
 }

@@ -15,6 +15,7 @@ pub fn smallest<T: PartialOrd + Ord>(list: &[T]) -> Option<&T> {
 }
 
 /// find average on list
+#[derive(Debug, Clone, Default)]
 pub struct AverageList {
     list: Vec<i32>,
     average: f64,
@@ -26,15 +27,11 @@ impl AverageList {
         self.update_average();
     }
 
+    /// Remove the last element from the list and update the average.
     pub fn remove(&mut self) -> Option<i32> {
-        let result = self.list.pop();
-        match result {
-            Some(value) => {
-                self.update_average();
-                Some(value)
-            }
-            None => None,
-        }
+        let value = self.list.pop()?;
+        self.update_average();
+        Some(value)
     }
 
     pub fn average(&mut self) -> f64 {
@@ -79,5 +76,14 @@ mod test {
         let numbers = vec![1, 3, 5, 7, 9];
         let std_dev = standard_deviation(&numbers);
         assert_eq!(std_dev, Some(3.1622776601683795));
+    }
+
+    #[test]
+    fn avg_list() {
+        let mut avg_list = AverageList::default();
+        avg_list.add(2);
+        avg_list.add(8);
+        avg_list.add(4);
+        assert_eq!(Some(4), avg_list.remove());
     }
 }

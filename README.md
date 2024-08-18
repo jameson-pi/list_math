@@ -15,7 +15,7 @@ Add the following line to your `Cargo.toml` file:
 
 ```
 [dependencies]
-list_math = "0.3.3"
+list_math = "0.3.4"
 ```
 Then run `cargo build` to install the crate.
 
@@ -123,7 +123,7 @@ fn main() {
 Note: This function assumes the data type is f64 for floating-point numbers.
 ## Contributing
 
-We welcome contributions to this crate! Please measage me at piscitello284@gmail.com for
+We welcome contributions to this crate! Please message me at piscitello284@gmail.com for
 details on how to get involved.
 ## Issues
 Submit an issue at https://github.com/jameson-pi/list_math if you encounter anything weird.
